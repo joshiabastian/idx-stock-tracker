@@ -4,7 +4,6 @@ numpy
 sqlalchemy
 psycopg2-binary
 pandas-ta
-apache-airflow
 python-telegram-bot
 python-dotenv
 holidays
