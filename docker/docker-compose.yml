@@ -27,7 +27,7 @@ services:
     #   - ../.env
     environment:
       POSTGRES_USER: idx_user
-      POSTGRES_PASSWORD: idx_p4ssw0rd # test pass
+      POSTGRES_PASSWORD: idx_p4ssw0rd
       POSTGRES_DB: idx_stock_tracker # test db
       POSTGRES_HOST_AUTH_METHOD: trust # test no pass
     ports:
