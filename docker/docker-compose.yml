@@ -35,7 +35,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "${DB_USER}", "-d", "${DB_NAME}"]
+      test: ["CMD", "pg_isready", "-U", "idx_user", "-d", "idx_stock_tracker"]
       interval: 10s
       retries: 5
       start_period: 10s
