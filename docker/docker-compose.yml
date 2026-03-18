@@ -29,7 +29,7 @@ services:
       POSTGRES_USER: idx_user
       POSTGRES_PASSWORD: idx_p4ssw0rd
       POSTGRES_DB: idx_stock_tracker
-      POSTGRES_HOST_AUTH_METHOD: trust # test no pass
+      POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - "5432:5432"
     volumes:
