@@ -23,12 +23,12 @@ services:
   postgres-data:
     image: postgres:15
     container_name: postgres-data
-    # env_file:
-    #   - ../.env
+    env_file:
+      - ../.env
     environment:
-      POSTGRES_USER: idx_user
-      POSTGRES_PASSWORD: idx_p4ssw0rd
-      POSTGRES_DB: idx_stock_tracker
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
       POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - "5432:5432"
