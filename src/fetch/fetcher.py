@@ -64,6 +64,7 @@ def fetch_historical(tickers=KOMPAS100_TICKERS, period_years=1):
     return final_df
 
 
+# Ambil saham setiap hari
 def fetch_daily(tickers=KOMPAS100_TICKERS):
     """
     Daily fetch: ambil data 1 hari terakhir
