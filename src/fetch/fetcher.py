@@ -112,6 +112,7 @@ def fetch_daily(tickers=KOMPAS100_TICKERS):
     return final_df
 
 
+# Ambil data saham 200 hari kebelakang jika sahamnya baru masuk ke kompas 100
 def fetch_new_ticker(ticker, period_days=200):
     """
     Fetch historical untuk saham baru masuk Kompas100
