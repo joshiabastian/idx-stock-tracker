@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from config.tickers import KOMPAS100_TICKERS
 
 
+# ambild data saham 1 tahun sebelumnya (hanya sekali)
 def fetch_historical(tickers=KOMPAS100_TICKERS, period_years=1):
     """
     Initial fetch: ambil data historis 1 tahun kebelakang
