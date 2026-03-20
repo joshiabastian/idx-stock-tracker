@@ -16,7 +16,7 @@ from src.notification.telegram import format_daily_report, send_report, send_ale
 
 
 def check_market_open(**context):
-    today = datetime.today().date()
+    today = context["logical_date"].date()
     id_holidays = holidays.Indonesia(years=today.year)
 
     if today.weekday() >= 5:
