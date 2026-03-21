@@ -26,12 +26,6 @@ def insert_raw_data(df):
     print(f"✅ Inserted {len(df)} rows to raw_data")
 
 
-def insert_gold_data(df):
-    engine = get_engine()
-    df.to_sql("gold_data", engine, if_exists="append", index=False)
-    print(f"✅ Inserted {len(df)} rows to gold_data")
-
-
 def fetch_raw_data(ticker=None, start_date=None):
     engine = get_engine()
     query = "SELECT * FROM raw_data"
@@ -48,7 +42,8 @@ def fetch_raw_data(ticker=None, start_date=None):
 
     import pandas as pd
 
-    return pd.read_sql(query, engine)
+    with engine.connect() as conn:
+        return pd.read_sql(query, conn.connection)
 
 
 def fetch_gold_data(ticker=None, start_date=None):
@@ -67,7 +62,8 @@ def fetch_gold_data(ticker=None, start_date=None):
 
     import pandas as pd
 
-    return pd.read_sql(query, engine)
+    with engine.connect() as conn:
+        return pd.read_sql(query, conn.connection)
 
 
 def get_top8(date):
@@ -80,4 +76,5 @@ def get_top8(date):
     """
     import pandas as pd
 
-    return pd.read_sql(query, engine)
+    with engine.connect() as conn:
+        return pd.read_sql(query, conn.connection)
