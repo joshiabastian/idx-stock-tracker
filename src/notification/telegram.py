@@ -17,8 +17,7 @@ def format_daily_report(top8_df, date):
     report += "━━━━━━━━━━━━━━━━━━━━\n"
     report += f"🏆 *TOP 8 SAHAM HARI INI*\n\n"
 
-    for i, row in top8_df.iterrows():
-        rank = i + 1
+    for rank, (i, row) in enumerate(top8_df.iterrows(), start=1):
 
         # Relative volume display (pakai raw)
         rel_vol_display = f"{row['relative_volume_raw']:.1f}x"
