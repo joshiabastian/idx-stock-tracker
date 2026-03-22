@@ -99,7 +99,7 @@ def send_daily_report(**context):
         print("⏭️ Skip report — bukan hari bursa")
         return
 
-    today = datetime.today().date()
+    today = context["logical_date"].date()
     top8 = db_get_top8(date=today)
 
     if top8 is None or top8.empty:
