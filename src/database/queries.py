@@ -48,7 +48,11 @@ def fetch_raw_data(ticker=None, start_date=None):
 
     import pandas as pd
 
-    return pd.read_sql(query, engine.connect())
+    conn = engine.raw_connection()
+    try:
+        return pd.read_sql(query, conn)
+    finally:
+        conn.close()
 
 
 def fetch_gold_data(ticker=None, start_date=None):
@@ -67,7 +71,11 @@ def fetch_gold_data(ticker=None, start_date=None):
 
     import pandas as pd
 
-    return pd.read_sql(query, engine.connect())
+    conn = engine.raw_connection()
+    try:
+        return pd.read_sql(query, conn)
+    finally:
+        conn.close()
 
 
 def get_top8(date):
@@ -80,4 +88,8 @@ def get_top8(date):
     """
     import pandas as pd
 
-    return pd.read_sql(query, engine.connect())
+    conn = engine.raw_connection()
+    try:
+        return pd.read_sql(query, conn)
+    finally:
+        conn.close()

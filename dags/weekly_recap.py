@@ -23,7 +23,8 @@ def generate_weekly_recap(**context):
         )
         raise ValueError("gold_data kosong")
 
-    df = df[df["date"] <= str(week_end)]
+    df["date"] = pd.to_datetime(df["date"]).dt.date
+    df = df[df["date"] <= week_end]
 
     top8_per_day = []
     for date in df["date"].unique():
