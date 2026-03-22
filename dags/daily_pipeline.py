@@ -70,7 +70,7 @@ def transform_and_score(**context):
     df = calculate_all(df)
     df = calculate_score(df)
 
-    today = datetime.today().date()
+    today = context["logical_date"].date()
     df_today = df[df["date"] == today].copy()
 
     gold_cols = [
