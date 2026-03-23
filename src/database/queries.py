@@ -35,7 +35,7 @@ def insert_gold_data(df):
     print(f"✅ Inserted {len(df)} rows to gold_data")
 
 
-# ambil ticker dari raw data
+# ambil ticker dari db raw data
 def fetch_raw_data(ticker=None, start_date=None):
     engine = get_engine()
     query = "SELECT * FROM raw_data"
@@ -59,6 +59,7 @@ def fetch_raw_data(ticker=None, start_date=None):
         conn.close()
 
 
+# ambil ticker dari db gold data
 def fetch_gold_data(ticker=None, start_date=None):
     engine = get_engine()
     query = "SELECT * FROM gold_data"
