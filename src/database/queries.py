@@ -83,6 +83,7 @@ def fetch_gold_data(ticker=None, start_date=None):
         conn.close()
 
 
+# ambil top 8 saham
 def get_top8(date):
     engine = get_engine()
     query = f"""
