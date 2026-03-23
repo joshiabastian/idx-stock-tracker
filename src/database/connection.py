@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
+# connect to db postgresql
 def get_engine():
     db_host = os.getenv("DB_HOST")
     db_port = os.getenv("DB_PORT")
