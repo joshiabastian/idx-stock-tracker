@@ -3,6 +3,7 @@ from sqlalchemy import text
 from src.database.connection import get_engine
 
 
+# create table / init table
 def create_tables():
     engine = get_engine()
     base_dir = os.path.dirname(__file__)
@@ -20,18 +21,21 @@ def create_tables():
     print("✅ Tables created successfully")
 
 
+# insert data ke raw data
 def insert_raw_data(df):
     engine = get_engine()
     df.to_sql("raw_data", engine, if_exists="append", index=False)
     print(f"✅ Inserted {len(df)} rows to raw_data")
 
 
+# insert data ke gold data
 def insert_gold_data(df):
     engine = get_engine()
     df.to_sql("gold_data", engine, if_exists="append", index=False)
     print(f"✅ Inserted {len(df)} rows to gold_data")
 
 
+# ambil ticker dari raw data
 def fetch_raw_data(ticker=None, start_date=None):
     engine = get_engine()
     query = "SELECT * FROM raw_data"
