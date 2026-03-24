@@ -44,6 +44,7 @@ def calculate_score(df):
     return df
 
 
+# Ambil top 8
 def get_top8(df, date=None):
     """
     Ambil Top 8 saham berdasarkan score
