@@ -51,6 +51,7 @@ def fetch_and_store(**context):
     print(f"✅ Raw data tersimpan: {len(df)} rows")
 
 
+# Transform data saham
 def transform_and_score(**context):
     is_market_open = context["ti"].xcom_pull(task_ids="check_market_open")
 
