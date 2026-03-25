@@ -58,6 +58,7 @@ def calculate_macd(df, fast=12, slow=26, signal=9):
     return df
 
 
+# Relative Volume
 def calculate_relative_volume(df):
     """
     Hitung Relative Volume = volume hari ini / avg volume 20 hari
