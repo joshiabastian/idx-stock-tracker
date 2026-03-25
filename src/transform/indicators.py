@@ -37,6 +37,7 @@ def calculate_rsi(df, period=14):
     return df
 
 
+# MACD indicator
 def calculate_macd(df, fast=12, slow=26, signal=9):
     """
     Hitung MACD dan MACD Signal
