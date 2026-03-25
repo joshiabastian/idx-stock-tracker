@@ -18,6 +18,7 @@ def calculate_ma(df):
     return df
 
 
+# RSI indicator
 def calculate_rsi(df, period=14):
     """
     Hitung RSI (Relative Strength Index)
