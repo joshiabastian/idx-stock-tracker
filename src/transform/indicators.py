@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 
 
+# MA indicator
 def calculate_ma(df):
     """
     Hitung Moving Average 20, 50, 100
