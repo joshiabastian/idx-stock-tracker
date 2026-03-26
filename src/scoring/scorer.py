@@ -66,6 +66,7 @@ def get_top8(df, date=None):
     return top8
 
 
+# Catatan
 def get_notes(row):
     """
     Generate catatan otomatis per saham
