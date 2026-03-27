@@ -31,6 +31,7 @@ def check_market_open(**context):
     return True
 
 
+# Ambil data setiap hari
 def fetch_and_store(**context):
     is_market_open = context["ti"].xcom_pull(task_ids="check_market_open")
 
